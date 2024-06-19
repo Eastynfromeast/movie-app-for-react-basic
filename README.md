@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+노마드 코더 리액트 챌린지 과정 중 리액트 기초 영화 앱 만들기를 기록하는 레퍼지토리입니다 :)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
