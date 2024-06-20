@@ -4,16 +4,16 @@ function Detail() {
 	const { id } = useParams();
 	const [isLoading, setIsLoading] = useState(true);
 	const [detail, setDetail] = useState("");
-	const getdetail = async () => {
-		const json = await (await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)).json();
-		console.log(json.data.movie);
-		setDetail(json.data.movie);
-		setIsLoading(false);
-	};
 
 	useEffect(() => {
-		getdetail();
-	}, []);
+		const getDetail = async () => {
+			const json = await (await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)).json();
+			console.log(json.data.movie);
+			setDetail(json.data.movie);
+			setIsLoading(false);
+		};
+		getDetail();
+	}, [id]);
 	return (
 		<div>
 			<h1>Detail</h1>
@@ -21,7 +21,7 @@ function Detail() {
 				<h2>We are calling the movie detail...</h2>
 			) : (
 				<div>
-					<img src={detail.medium_cover_image} />
+					<img src={detail.medium_cover_image} alt={detail.title} />
 					<h2>
 						{detail.title} <span>{`(${detail.year})`}</span>
 					</h2>

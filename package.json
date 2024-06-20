@@ -39,5 +39,8 @@
 			"last 1 safari version"
 		]
 	},
-	"homepage": "https://Eastynfromeast.github.io/movie-app-for-react-basic"
+	"homepage": "https://Eastynfromeast.github.io/movie-app-for-react-basic",
+	"devDependencies": {
+		"@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+	}
 }
